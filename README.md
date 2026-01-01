@@ -17,18 +17,11 @@ A simple timer application built in Java using Swing. Provides basic timer funct
 
 - Java Development Kit (JDK) 8 or higher
 
-## Installation and Running
+## Run
 
-1. Ensure JDK is installed on your system.
-2. Navigate to the project directory.
-3. Compile the source code:
-   ```
-   javac -d bin src/timer/*.java
-   ```
-4. Run the timer:
-   ```
-   java -cp bin timer.Timer_main
-   ```
+```bash
+java -jar Timer-module.jar
+```
 
 ## Usage
 

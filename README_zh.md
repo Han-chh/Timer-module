@@ -15,18 +15,11 @@
 
 - Java开发工具包（JDK）8或更高版本
 
-## 安装和运行
+## 运行
 
-1. 确保系统上安装了JDK。
-2. 导航到项目目录。
-3. 编译源代码：
-   ```
-   javac -d bin src/timer/*.java
-   ```
-4. 运行计时器：
-   ```
-   java -cp bin timer.Timer_main
-   ```
+```bash
+java -jar Timer-module.jar
+```
 
 ## 使用方法
 
