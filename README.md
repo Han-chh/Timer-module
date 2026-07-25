@@ -1,44 +1,35 @@
 # Timer Module
 
-## Description
+A small Java Swing timer demonstrating start, pause, restart, and continuously updated elapsed-time state.
 
-A simple timer application built in Java using Swing. Provides basic timer functionality with start, pause, and restart capabilities.
+[中文说明](README_zh.md)
 
->Note: the lowest embeded precision of this timer is 1 ms.
+## Overview
+
+Timer Module isolates a simple stateful desktop component. A worker loop advances the displayed value while active, pause preserves the current state, and restart returns the timer to its initial state.
+
+## Screenshot
+
+![The native timer paused with an elapsed-time value](assets/screenshots/timer-module.png)
+
+The screenshot comes directly from the running Swing timer.
 
 ## Features
 
-- Start, pause, and restart timer
-- Real-time display updates
-- Thread-safe timer operations
-- User-friendly GUI interface
-
-## Requirements
-
-- Java Development Kit (JDK) 8 or higher
-- The jar package is packaged with Java 25.
+- Start
+- Live elapsed-time display
+- Pause/continue
+- Restart/reset
+- Swing desktop interface
 
 ## Run
+
+The committed JAR was verified with Java 25:
 
 ```bash
 java -jar Timer-module.jar
 ```
 
-## Usage
+## Accuracy note
 
-1. Launch the application
-2. Click "start" to begin timing
-3. Click "pause" to pause the timer
-4. Click "restart" to reset and start over
-
-## Project Structure
-
-- `src/timer/Timer_main.java`: Main application and GUI
-- `src/timer/Timer.java`: Timer logic implementation
-- `src/timer/Refresh.java`: Display refresh thread
-- `src/timer/Pause.java`: Pause functionality
-- `bin/`: Compiled class files
-
-## Contributing
-
-Feel free to contribute additional timer features or improvements!
+The implementation increments a floating-point value after `Thread.sleep(1)`. This demonstrates timer state and UI updates, but it should not be described as measured one-millisecond precision without benchmarking.

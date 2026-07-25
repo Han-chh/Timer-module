@@ -1,42 +1,35 @@
-# 计时器模块
+# Timer Module
 
-使用Swing构建的简单计时器应用程序。提供基本的计时器功能，具有开始、暂停和重新开始能力。
+一个展示开始、暂停、重启和持续更新用时状态的轻量 Java Swing 计时器。
 
->注意：这个计时器的最小内置单位是1ms。
+[English](README.md)
+
+## 项目概述
+
+Timer Module 将计时状态封装为简单桌面组件。工作循环在运行时更新显示值，暂停会保留当前状态，重启则恢复初始状态。
+
+## 截图
+
+![原生计时器暂停并显示当前用时](assets/screenshots/timer-module.png)
+
+截图直接来自运行中的 Swing 计时器。
 
 ## 功能
 
-- 开始、暂停和重新开始计时器
-- 实时显示更新
-- 线程安全的计时器操作
-- 用户友好的GUI界面
-
-## 要求
-
-- Java开发工具包（JDK）8或更高版本
-- jar包使用Java 25打包
+- 开始
+- 实时用时显示
+- 暂停/继续
+- 重启/重置
+- Swing 桌面界面
 
 ## 运行
+
+仓库中的 JAR 已在 Java 25 上验证：
 
 ```bash
 java -jar Timer-module.jar
 ```
 
-## 使用方法
+## 精度说明
 
-1. 启动应用程序
-2. 点击"start"开始计时
-3. 点击"pause"暂停计时器
-4. 点击"restart"重置并重新开始
-
-## 项目结构
-
-- `src/timer/Timer_main.java`：主应用程序和GUI
-- `src/timer/Timer.java`：计时器逻辑实现
-- `src/timer/Refresh.java`：显示刷新线程
-- `src/timer/Pause.java`：暂停功能
-- `bin/`：编译的类文件
-
-## 贡献
-
-欢迎贡献附加计时器功能或改进！
+实现通过 `Thread.sleep(1)` 后递增浮点数来刷新显示。这可以展示计时状态和 UI 更新，但在完成基准验证前，不应宣传为经过测量的 1 毫秒精度。
